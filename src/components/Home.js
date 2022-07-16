@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import { AiFillStar } from 'react-icons/ai';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 const Home = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
       <Titletext>Quick Help</Titletext>
@@ -31,7 +37,7 @@ const Home = () => {
               <Bio>Info<br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Bio>
             </Info>
             <Message>
-              <Button variant="dark">Message</Button>
+              <Button variant="dark" onClick={handleShow}>Message</Button>
             </Message>
           </Profile>
 
@@ -59,7 +65,7 @@ const Home = () => {
               <Bio>Info<br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Bio>
             </Info>
             <Message>
-              <Button variant="dark">Message</Button>
+            <Button variant="dark" onClick={handleShow}>Message</Button>
             </Message>
           </Profile>
 
@@ -87,13 +93,52 @@ const Home = () => {
               <Bio>Info<br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Bio>
             </Info>
             <Message>
-              <Button variant="dark">Message</Button>
+            <Button variant="dark" onClick={handleShow}>Message</Button>
             </Message>
           </Profile>
 
         </Tutor>
         
       </Tutors>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Send Message</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Your Phone Number</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="123-456-7890"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              
+            >
+              <Form.Label>Question</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+          <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Images</Form.Label>
+        <Form.Control type="file" />
+        </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Send Message
+          </Button>
+        </Modal.Footer>
+        
+      </Modal>
+      
     </div>
   )
 }

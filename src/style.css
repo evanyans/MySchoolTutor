@@ -2,3 +2,12 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #ebfaff;
 }
+footer {
+    margin-top:150px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    font-size:14px;
+}

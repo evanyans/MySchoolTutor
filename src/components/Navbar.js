@@ -19,7 +19,7 @@ function Navigation() {
             </style>
             <Navbar bg="white" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/home">MySchoolTutor</Navbar.Brand>
+                    <Navbar.Brand href="/home">Generic Secondary School</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

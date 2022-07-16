@@ -18,8 +18,9 @@ function App() {
         </Routes>
       </Wrapper>
 
-
+      <footer>© Evan Yan 2022</footer>
     </Router>
+    
   );
 }
 
