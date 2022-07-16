@@ -1,7 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Button from 'react-bootstrap/Button';
+import styled from 'styled-components';
 function Navigation() {
     return (
         <>
@@ -10,6 +11,8 @@ function Navigation() {
                     .container {
                         padding-top:10px;
                         font-weight:600;
+                        font-size:18px;
+                        padding-bottom:15px;
                     }
 
                 `}
@@ -23,12 +26,23 @@ function Navigation() {
                             <Nav.Link href="/home">Home</Nav.Link>
                             <Nav.Link href="/browse">Browse</Nav.Link>
                             <Nav.Link href="/history">History</Nav.Link>
+                            
                         </Nav>
+                        <Button variant="dark">000S-Name</Button>
                     </Navbar.Collapse>
+                    
                 </Container>
             </Navbar>
+            <Line></Line>
         </>
     );
 }
 
 export default Navigation;
+
+export const Line = styled.div`
+    content: " ";
+    display: block;
+    border-bottom: 0.5px solid #9E9E9E;
+
+`
