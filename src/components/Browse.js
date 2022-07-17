@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Dropdown from 'react-bootstrap/Dropdown';
 import styled from 'styled-components';
 import { CgProfile } from 'react-icons/cg';
 import { AiFillStar } from 'react-icons/ai';
+import Modal from 'react-bootstrap/Modal';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 const Browse = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
       <Navbar expand="lg">
@@ -21,52 +26,34 @@ const Browse = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Dropdown>
-                <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                  Rating
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">4.5+</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">4+</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">3.5+</Dropdown.Item>
-                </Dropdown.Menu> 
-              </Dropdown>
-              <Spacer></Spacer>
-              <Dropdown>
-                <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                  Subject
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Math</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Physics</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Chemistry</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">English</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Biology</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-
+              <h2>Select a subject.</h2>
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search Subject"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       <TutorCards>
-        <Card>
-          <Icon><CgProfile size={64}/></Icon>
+        <Card onClick={handleShow}>
+          <Icon><CgProfile size={64} /></Icon>
           <Personal>
-            <Subject>Physics</Subject>
-            <Body>Evan Yan</Body>
+            <Subject>Math</Subject>
+            <Body>Joey Lee</Body>
+            <Stars>4.7<AiFillStar /></Stars>
+          </Personal>
+          <Subjects>
+            <ul>
+              Subjects:
+              <li>Calculus</li>
+              <li>English</li>
+              <li>Chemistry</li>
+            </ul>
+          </Subjects>
+        </Card>
+        <Card onClick={handleShow}>
+          <Icon><CgProfile size={64} /></Icon>
+          <Personal>
+            <Subject>Chemistry</Subject>
+            <Body>Winnie Pooh</Body>
             <Stars>4.5<AiFillStar /></Stars>
           </Personal>
           <Subjects>
@@ -78,12 +65,12 @@ const Browse = () => {
             </ul>
           </Subjects>
         </Card>
-        <Card>
-          <Icon><CgProfile size={64}/></Icon>
+        <Card onClick={handleShow}>
+          <Icon><CgProfile size={64} /></Icon>
           <Personal>
             <Subject>Physics</Subject>
-            <Body>Evan Yan</Body>
-            <Stars>4.5<AiFillStar /></Stars>
+            <Body>Tom Jerry</Body>
+            <Stars>4.0<AiFillStar /></Stars>
           </Personal>
           <Subjects>
             <ul>
@@ -94,28 +81,12 @@ const Browse = () => {
             </ul>
           </Subjects>
         </Card>
-        <Card>
-          <Icon><CgProfile size={64}/></Icon>
+        <Card onClick={handleShow}>
+          <Icon><CgProfile size={64} /></Icon>
           <Personal>
-            <Subject>Physics</Subject>
+            <Subject>English</Subject>
             <Body>Evan Yan</Body>
-            <Stars>4.5<AiFillStar /></Stars>
-          </Personal>
-          <Subjects>
-            <ul>
-              Subjects:
-              <li>Calculus</li>
-              <li>English</li>
-              <li>Chemistry</li>
-            </ul>
-          </Subjects>
-        </Card>
-        <Card>
-          <Icon><CgProfile size={64}/></Icon>
-          <Personal>
-            <Subject>Physics</Subject>
-            <Body>Evan Yan</Body>
-            <Stars>4.5<AiFillStar /></Stars>
+            <Stars>4.0<AiFillStar /></Stars>
           </Personal>
           <Subjects>
             <ul>
@@ -127,6 +98,51 @@ const Browse = () => {
           </Subjects>
         </Card>
       </TutorCards>
+
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Header>Schedule</Header>
+
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Schedule a time</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="3:00pm, lunchtime, etc.."
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Location</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="room A201, library, etc.."
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+            >
+              <Form.Label>What do you want to learn/review?</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Submit
+          </Button>
+        </Modal.Footer>
+
+      </Modal>
+      <Spacer></Spacer>
     </div>
   )
 }
@@ -135,7 +151,12 @@ export default Browse
 
 export const Spacer = styled.div
   `
-padding-left:10px;
+padding-bottom:300px;
+`
+export const Header = styled.div`
+position:relative;
+font-weight:700;
+font-size:2rem;
 `
 
 export const TutorCards = styled.div`
@@ -147,7 +168,8 @@ flex-wrap:wrap;
 export const Card = styled.div`
 width:397px;
 height:170px;
-background-color:#F3F4F6;
+background-color:white;
+border-radius:8px;
 padding-left:32px;
 padding-right:32px;
 padding-top:32px;
