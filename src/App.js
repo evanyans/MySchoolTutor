@@ -11,10 +11,10 @@ function App() {
 
       <Wrapper>
         <Routes>
-          <Route exact path="/MySchoolTutor" element={<Navigate to="/home" />} />
-          <Route path="/MySchoolTutor/home" element={<Home />} />
-          <Route path="/MySchoolTutor/browse" element={<Browse />} />
-          <Route path="/MySchoolTutor/history"  element={<History />} />
+          <Route exact path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/history"  element={<History />} />
         </Routes>
       </Wrapper>
 
