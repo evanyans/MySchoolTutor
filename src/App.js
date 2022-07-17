@@ -11,7 +11,7 @@ function App() {
 
       <Wrapper>
         <Routes>
-          <Route path="/" element={<Navigate to="/MySchoolTutor/home" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/history" element={<History />} />

@@ -27,7 +27,6 @@ function Navigation() {
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/browse">Browse</Nav.Link>
                             <Nav.Link as={Link} to="/history">History</Nav.Link>
-                            
                         </Nav>
                         <Button variant="dark">000S-Name</Button>
                     </Navbar.Collapse>
