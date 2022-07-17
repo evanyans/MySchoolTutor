@@ -1,5 +1,5 @@
 import Navigation from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from './components/Home';
 import Browse from './components/Browse';
 import History from './components/History';
