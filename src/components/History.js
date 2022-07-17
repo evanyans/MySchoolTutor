@@ -136,7 +136,7 @@ const History = () => {
           </Rate>
           </ExtraInfo>
         </Card>
-      
+        <Spacer></Spacer>
       </TutorCards>
     </div>
   )
@@ -152,7 +152,7 @@ export const Star = styled.div`
 
 export const Spacer = styled.div
   `
-padding-bottom:300px;
+padding-bottom:150px;
 `
 export const Date = styled.div`
 padding-left:100px;
