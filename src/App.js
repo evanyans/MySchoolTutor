@@ -1,25 +1,25 @@
 import Navigation from './components/Navbar';
-import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from './components/Home';
 import Browse from './components/Browse';
 import History from './components/History';
 import styled from 'styled-components';
 function App() {
   return (
-    <Router basename ="/">
+    <HashRouter basename="/">
       <Navigation />
 
       <Wrapper>
         <Routes>
-          <Route exact path="/" component={Home} />
-          <Route path="/home" component={Home} />
-          <Route path="/browse" component={Browse}/>
-          <Route path="/history"  component={History}/>
+          <Route exact path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/history"  element={<History />} />
         </Routes>
       </Wrapper>
 
       <footer>© Evan Yan 2022</footer>
-    </Router>
+    </HashRouter>
     
   );
 }
