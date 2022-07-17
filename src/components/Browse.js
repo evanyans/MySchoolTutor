@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import { CgProfile } from 'react-icons/cg';
 import { AiFillStar } from 'react-icons/ai';
 import Modal from 'react-bootstrap/Modal';
-import { AiFillStar } from 'react-icons/ai';
 
 const Browse = () => {
   const [show, setShow] = useState(false);
