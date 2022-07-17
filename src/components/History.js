@@ -1,14 +1,9 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+
 import styled from 'styled-components';
 import { CgProfile } from 'react-icons/cg';
 import { AiFillStar } from 'react-icons/ai';
-import Modal from 'react-bootstrap/Modal';
-import Dropdown from 'react-bootstrap/Dropdown';
+
 const History = () => {
   return (
     <div>
