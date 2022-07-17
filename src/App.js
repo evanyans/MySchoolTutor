@@ -11,10 +11,10 @@ function App() {
 
       <Wrapper>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/browse" element={<Browse />} />
-          <Route path="/history"  element={<History />} />
+          <Route exact path="/" component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/browse" component={Browse}/>
+          <Route path="/history"  component={History}/>
         </Routes>
       </Wrapper>
 
