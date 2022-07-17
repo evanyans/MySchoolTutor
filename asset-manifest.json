@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/MySchoolTutor/static/css/main.fd18b6ca.css",
-    "main.js": "/MySchoolTutor/static/js/main.11490973.js",
-    "static/js/787.28cb0dcd.chunk.js": "/MySchoolTutor/static/js/787.28cb0dcd.chunk.js",
+    "main.js": "/MySchoolTutor/static/js/main.b0dcb441.js",
     "index.html": "/MySchoolTutor/index.html",
     "main.fd18b6ca.css.map": "/MySchoolTutor/static/css/main.fd18b6ca.css.map",
-    "main.11490973.js.map": "/MySchoolTutor/static/js/main.11490973.js.map",
-    "787.28cb0dcd.chunk.js.map": "/MySchoolTutor/static/js/787.28cb0dcd.chunk.js.map"
+    "main.b0dcb441.js.map": "/MySchoolTutor/static/js/main.b0dcb441.js.map"
   },
   "entrypoints": [
     "static/css/main.fd18b6ca.css",
-    "static/js/main.11490973.js"
+    "static/js/main.b0dcb441.js"
   ]
 }
