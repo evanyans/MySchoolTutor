@@ -6,7 +6,7 @@ import History from './components/History';
 import styled from 'styled-components';
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navigation />
 
       <Wrapper>
