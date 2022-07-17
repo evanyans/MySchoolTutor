@@ -6,15 +6,15 @@ import History from './components/History';
 import styled from 'styled-components';
 function App() {
   return (
-    <Router history={history} basename={process.env.PUBLIC_URL}>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navigation />
 
       <Wrapper>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/browse" element={<Browse />} />
-          <Route path="/history"  element={<History />} />
+          <Route exact path="/MySchoolTutor" element={<Navigate to="/home" />} />
+          <Route path="/MySchoolTutor/home" element={<Home />} />
+          <Route path="/MySchoolTutor/browse" element={<Browse />} />
+          <Route path="/MySchoolTutor/history"  element={<History />} />
         </Routes>
       </Wrapper>
 
