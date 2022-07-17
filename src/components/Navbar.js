@@ -23,9 +23,9 @@ function Navigation() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/home">Home</Nav.Link>
-                            <Nav.Link href="/browse">Browse</Nav.Link>
-                            <Nav.Link href="/history">History</Nav.Link>
+                            <Nav.Link href="/MySchoolTutor/home">Home</Nav.Link>
+                            <Nav.Link href="/MySchoolTutor/browse">Browse</Nav.Link>
+                            <Nav.Link href="/MySchoolTutor/history">History</Nav.Link>
                             
                         </Nav>
                         <Button variant="dark">000S-Name</Button>
