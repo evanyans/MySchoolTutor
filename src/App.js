@@ -11,10 +11,10 @@ function App() {
 
       <Wrapper>
         <Routes>
-          <Route path={process.env.PUBLIC_URL + '/'} element={<Navigate to="/home" />} />
-          <Route path={process.env.PUBLIC_URL + '/home'} element={<Home />} />
-          <Route path={process.env.PUBLIC_URL + '/browse'} element={<Browse />} />
-          <Route path={process.env.PUBLIC_URL + '/history'} element={<History />} />
+          <Route exact path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/history"  element={<History />} />
         </Routes>
       </Wrapper>
 
