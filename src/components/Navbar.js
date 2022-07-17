@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 function Navigation() {
     return (
         <>
@@ -19,13 +20,13 @@ function Navigation() {
             </style>
             <Navbar bg="white" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/MySchoolTutor/home">Generic Secondary School</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">Generic Secondary School</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/MySchoolTutor/home">Home</Nav.Link>
-                            <Nav.Link href="/MySchoolTutor/browse">Browse</Nav.Link>
-                            <Nav.Link href="/MySchoolTutor/history">History</Nav.Link>
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/browse">Browse</Nav.Link>
+                            <Nav.Link as={Link} to="/history">History</Nav.Link>
                             
                         </Nav>
                         <Button variant="dark">000S-Name</Button>
